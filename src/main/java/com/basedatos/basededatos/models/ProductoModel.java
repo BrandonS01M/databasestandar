@@ -3,8 +3,8 @@ package com.basedatos.basededatos.models;
 import jakarta.persistence.*;
 
 @Entity
-@Table(schema = "producer")
-public class ProducerModel {
+@Table(schema = "producto")
+public class ProductoModel {
     @Id
     @Column(name = "id",updatable = false, nullable = false,  unique = true)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,6 +17,6 @@ public class ProducerModel {
     private Double price;
 
     @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private MakerModel makerModel;
+    private FabricanteModel fabricanteModel;
 
 }
